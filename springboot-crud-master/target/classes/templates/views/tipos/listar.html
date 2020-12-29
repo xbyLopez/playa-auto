@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+	</div>
+
+	<div class="container">
+       	<a class="btn btn-primary btn-sm" th:href="@{/views/tipos/create}"
+			th:text="''" title=""> </a>
+       
+
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Tipo</th>
+
+					
+					
+				
+								
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="t:${Tipos}">
+					<th scope="row" th:text="${t.id_tipo}"></th>
+						
+					<td th:text="${t.tipo}"></td>
+				
+					
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+</html>

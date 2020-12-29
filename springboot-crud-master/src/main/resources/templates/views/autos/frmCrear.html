@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+	
+	<div class="card bg-light">
+		<div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+		<div class="card-body">
+	
+		<form th:action="@{/views/autos/save}" th:object="${autos}" method="post">
+			<div class="form-group row">
+				
+				<input type="hidden" th:field="*{id_auto}">
+				<label class="col-md-2" for="anho">Anho:</label> 
+				<input type="text" th:field="*{anho}" class="form-control form-control-sm col-md-6" id="anho"
+					placeholder="anho"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('anho')}"
+						th:errors="*{anho}">
+					</small>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="chapa">chapa:</label> 
+				<input type="text" th:field="*{chapa}" class="form-control form-control-sm col-md-6" id="chapa"
+					placeholder="chapa"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('chapa')}"
+						th:errors="*{chapa}">
+					</small>
+			</div>
+			
+			
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="email">chasis:</label> 
+				<input type="text" th:field="*{chasis}" class="form-control form-control-sm col-md-6" id="email"
+					placeholder="chasis"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('chasis')}"
+						th:errors="*{chasis}">
+					</small>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="disponible">disponible:</label> 
+				<input type="text" th:field="*{disponible}" class="form-control form-control-sm col-md-6" id="disponible"
+					placeholder="disponible"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('disponible')}"
+						th:errors="*{disponible}">
+					</small>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="disponible">modelo:</label> 
+				<input type="text" th:field="*{modelo}" class="form-control form-control-sm col-md-6" id="modelo"
+					placeholder="disponible"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('modelo')}"
+						th:errors="*{modelo}">
+					</small>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="precio">precio:</label> 
+				<input type="text" th:field="*{precio}" class="form-control form-control-sm col-md-6" id="precio"
+					placeholder="precio"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('precio')}"
+						th:errors="*{precio}">
+					</small>
+			</div>
+			<div class="form-group row">
+				<label class="col-md-2" for="cantidadcambios">cantidadcambios:</label> 
+				<input type="text" th:field="*{cantidadcambios}" class="form-control form-control-sm col-md-6" id="cantidadcambios"
+					placeholder="cantidadcambios"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('cantidadcambios')}"
+						th:errors="*{cantidadcambios}">
+					</small>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="historialmantenimiento">historialmantenimiento:</label> 
+				<input type="text" th:field="*{historialmantenimiento}" class="form-control form-control-sm col-md-6" id="historialmantenimiento"
+					placeholder="historialmantenimiento"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('historialmantenimiento')}"
+						th:errors="*{historialmantenimiento}">
+					</small>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-md-2" for="tipoautomovil">tipoautomovil:</label> 
+				<input type="text" th:field="*{tipoautomovil}" class="form-control form-control-sm col-md-6" id="tipoautomovil"
+					placeholder="tipoautomovil"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('tipoautomovil')}"
+						th:errors="*{tipoautomovil}">
+					</small>
+			</div>
+			
+						<div class="form-group row">
+				<label class="col-md-2" for="gps">gps:</label> 
+				<input type="text" th:field="*{gps}" class="form-control form-control-sm col-md-6" id="gps"
+					placeholder="gps"> 
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('gps')}"
+						th:errors="*{gps}">
+					</small>
+			</div>
+			
+			
+			
+			<div class="card-footer bg-dark">
+				<input type="submit" class="btn btn-primary btn-sm" value="Guardar">
+			</div>
+			
+		</form>
+		</div>
+	</div>
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+</html>

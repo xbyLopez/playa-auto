@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+	</div>
+
+	<div class="container">
+
+		<a class="btn btn-primary btn-sm" th:href="@{/views/autos/create}"
+			th:text="'Nuevo Auto'" title="Crear Nuevo Registro"> </a>
+
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Anho</th>
+					<th scope="col">Chapa</th>
+					<th scope="col">Chasis</th>
+					<th scope="col">Disponible</th>
+					<th scope="col">Modelo</th>
+						<th scope="col">Precio</th>
+							<th scope="col">Cant.Cambios</th>
+								<th scope="col">Historial Mantenimiento</th>
+									<th scope="col">Tipo Automovil</th>
+										<th scope="col">GPS</th>
+						
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+					
+					
+				
+								
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="a:${Autos}">
+					<th scope="row" th:text="${a.id_auto}"></th>
+					<td th:text="${a.anho}"></td>
+					<td th:text="${a.chapa}"></td>
+					<td th:text="${a.chasis}"></td>
+					<td th:text="${a.disponible}"></td>
+						<td th:text="${a.modelo}"></td>
+								<td th:text="${a.precio}"></td>
+								<td th:text="${a.cantidadcambios}"></td>
+								<td th:text="${a.historialmantenimiento}"></td>
+								<td th:text="${a.tipoautomovil}"></td>
+								<td th:text="${a.gps}"></td>
+								
+				
+					
+					
+					<td><a class="btn btn-success btn-sm"
+						th:href="@{/views/autos/edit/} + ${a.id_auto}" th:text="'Editar'"
+						title="Editar Registro"> </a></td>
+					<td><a class="btn btn-danger btn-sm"
+						th:href="@{/views/autos/delete/} + ${a.id_auto}"
+						th:text="'Eliminar'" title="Eliminar Registro"
+						onclick="return confirm('Esta seguro de eliminar el registro?');">
+					</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<footer th:replace="plantilla/template :: footer"></footer>
+
+</body>
+</html>
