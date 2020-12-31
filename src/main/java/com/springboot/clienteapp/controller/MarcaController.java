@@ -35,7 +35,7 @@ public class MarcaController {
 		model.addAttribute("titulo", "Lista de Marcas");
 		model.addAttribute("Marcas", listadoMarcas);
 
-		return "/views/marcas/listar";
+		return "views/marcas/listar";
 	}
 	
 	

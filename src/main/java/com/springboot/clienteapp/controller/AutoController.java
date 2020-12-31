@@ -37,7 +37,7 @@ public class AutoController {
 		model.addAttribute("titulo", "Lista de Autos");
 		model.addAttribute("Autos", listadoAutos);
 
-		return "/views/autos/listar";
+		return "views/autos/listar";
 	}
 	
 	@GetMapping("/create")
@@ -50,7 +50,7 @@ public class AutoController {
 		model.addAttribute("autos", auto);
 		
 
-		return "/views/autos/frmCrear";
+		return "views/autos/frmCrear";
 	}
 	@PostMapping("/save")
 	public String guardar(@Valid @ModelAttribute Auto auto, BindingResult result,
@@ -62,7 +62,7 @@ public class AutoController {
 			model.addAttribute("autos", auto);
 			
 			System.out.println("Existieron errores en el formulario");			
-			return "/views/autos/frmCrear";
+			return "views/autos/frmCrear";
 		}
 
 		autoService.guardar(auto);
@@ -96,7 +96,7 @@ public class AutoController {
 		model.addAttribute("autos", auto);
 		
 
-		return "/views/autos/frmCrear";
+		return "views/autos/frmCrear";
 	}
 	
 	@GetMapping("/delete/{id}")

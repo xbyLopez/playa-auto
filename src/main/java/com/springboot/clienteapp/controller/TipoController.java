@@ -35,7 +35,7 @@ public class TipoController {
 		model.addAttribute("titulo", "Lista de Tipos");
 		model.addAttribute("Tipos", listadoTipo);
 
-		return "/views/tipos/listar";
+		return "views/tipos/listar";
 	}
 	
 	

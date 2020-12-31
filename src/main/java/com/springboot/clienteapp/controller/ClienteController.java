@@ -37,7 +37,7 @@ public class ClienteController {
 		model.addAttribute("titulo", "Lista de Clientes");
 		model.addAttribute("clientes", listadoClientes);
 
-		return "/views/clientes/listar";
+		return "views/clientes/listar";
 	}
 
 	@GetMapping("/create")
@@ -50,7 +50,7 @@ public class ClienteController {
 		model.addAttribute("cliente", cliente);
 		model.addAttribute("ciudades", listCiudades);
 
-		return "/views/clientes/frmCrear";
+		return "views/clientes/frmCrear";
 	}
 
 	@PostMapping("/save")
@@ -63,7 +63,7 @@ public class ClienteController {
 			model.addAttribute("cliente", cliente);
 			model.addAttribute("ciudades", listCiudades);
 			System.out.println("Existieron errores en el formulario");			
-			return "/views/clientes/frmCrear";
+			return "views/clientes/frmCrear";
 		}
 
 		clienteService.guardar(cliente);
@@ -97,7 +97,7 @@ public class ClienteController {
 		model.addAttribute("cliente", cliente);
 		model.addAttribute("ciudades", listCiudades);
 
-		return "/views/clientes/frmCrear";
+		return "views/clientes/frmCrear";
 	}
 
 	@GetMapping("/delete/{id}")
