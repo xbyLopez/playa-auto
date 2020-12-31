@@ -35,7 +35,7 @@ public class CiudadController {
 		model.addAttribute("titulo", "Lista de Ciudades");
 		model.addAttribute("Ciudades", listadoCiudad);
 
-		return "/views/ciudades/listar";
+		return "views/ciudades/listar";
 	}
 	
 	
